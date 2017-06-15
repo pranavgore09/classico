@@ -4,7 +4,9 @@ run:
 	cd gateway && go build -o gateway
 	cd backend && go build -o app
 	docker-compose up -d --build
-	rm -f gateway/gateway backend/app
 
 stop:
 	docker-compose down
+
+clean:
+	rm -f gateway/gateway backend/app
