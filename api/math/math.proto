@@ -1,0 +1,21 @@
+syntax="proto3";
+
+package math;
+
+service Addition {
+    rpc Add(BinaryValue) returns (Value) {}
+    rpc Incr(UnaryValue) returns(Value) {}
+}
+
+message Value {
+    int32 r = 1;
+}
+
+message BinaryValue {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+message UnaryValue {
+    int32 a= 1;
+}

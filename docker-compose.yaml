@@ -1,0 +1,12 @@
+version: '2'
+services:
+  backend:
+    image: pranav/backend
+    build:
+      context: ./backend
+  gateway:
+    image: pranav/gateway
+    build:
+      context: ./gateway
+    ports:
+      - "1111:1111"
