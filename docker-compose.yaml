@@ -1,16 +1,16 @@
 version: '2'
 services:
   backend:
-    image: pranav/backend
+    image: docker.io/pgore/backend
     build:
       context: ./backend
   gateway:
-    image: pranav/gateway
+    image: docker.io/pgore/gateway
     build:
       context: ./gateway
     ports:
       - "1111:1111"
   daily:
-    image: pranav/daily-backend
+    image: docker.io/pgore/daily-backend
     build:
       context: ./daily-backend
