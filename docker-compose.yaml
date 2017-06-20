@@ -10,3 +10,7 @@ services:
       context: ./gateway
     ports:
       - "1111:1111"
+  daily:
+    image: pranav/daily-backend
+    build:
+      context: ./daily-backend
