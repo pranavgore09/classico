@@ -1,0 +1,11 @@
+syntax= "proto3";
+
+package daily;
+
+service Starwars{
+    rpc GetQuote(Text) returns(Text){}
+}
+
+message Text {
+    string text = 1 ;
+}
