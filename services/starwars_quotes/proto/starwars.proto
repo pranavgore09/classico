@@ -1,0 +1,14 @@
+syntax= "proto3";
+package starwars_quotes;
+
+service StarwarsQuotes{
+    rpc Quotes(Action) returns (stream Text) {}
+}
+
+message Action {
+    int32 start = 1;
+}
+
+message Text {
+    string text = 1 ;
+}

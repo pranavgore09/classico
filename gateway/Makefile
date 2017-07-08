@@ -1,9 +1,6 @@
 build:
-	GOOS=linux go build -o gateway
-	docker build -t pranav/gateway .
+	npm install -g grpc-tools
+	grpc_tools_node_protoc --proto_path ../services/*/proto/ --js_out=import_style=commonjs,binary:./services_pb --grpc_out=./services_pb/ --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin` ../services/*/proto/*.proto
 
 run:
-	docker run -p 1111:1111 -p 8080:8080 pranav/gateway
-
-clean:
-	rm -f gateway
+	npm start
